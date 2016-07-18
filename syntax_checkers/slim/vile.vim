@@ -47,6 +47,39 @@ if !exists('g:loaded_syntastic_slim_vile_slim_lint_checker')
 endif
 
 "============================================================================
+" Checker: vile-rails-best-practices
+"============================================================================
+
+if !exists('g:loaded_syntastic_slim_vile_rails_best_practices_checker')
+    let g:loaded_syntastic_slim_vile_rails_best_practices_checker = 1
+
+    if !exists('g:syntastic_slim_vile_rails_best_practices_sort')
+        let g:syntastic_slim_vile_rails_best_practices_sort = 1
+    endif
+
+    function! SyntaxCheckers_slim_vile_rails_best_practices_IsAvailable() dict
+        return executable(self.getExec())
+    endfunction
+
+    function! SyntaxCheckers_slim_vile_rails_best_practices_GetLocList() dict
+        let makeprg = self.makeprgBuild({
+                    \ 'args': 'punish -p rails-best-practices -f syntastic -n -d' })
+
+        let errorformat = '%f:%l:%c: %t: %m'
+
+        return SyntasticMake({
+            \ 'makeprg': makeprg,
+            \ 'errorformat': errorformat,
+            \ 'subtype': 'Style'})
+    endfunction
+
+    call g:SyntasticRegistry.CreateAndRegisterChecker({
+                \ 'filetype': 'slim',
+                \ 'name': 'vile_rails_best_practices',
+                \ 'exec': 'vile' })
+endif
+
+"============================================================================
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
