@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_typescript_vile_tslint_checker')
 
     function! SyntaxCheckers_typescript_vile_tslint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p tslint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p tslint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_coffee_vile_coffeelint_checker')
 
     function! SyntaxCheckers_coffee_vile_coffeelint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p coffeelint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p coffeelint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_javascript_vile_eslint_checker')
 
     function! SyntaxCheckers_javascript_vile_eslint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p eslint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p eslint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 
@@ -63,7 +63,7 @@ if !exists('g:loaded_syntastic_javascript_vile_jshint_checker')
 
     function! SyntaxCheckers_javascript_vile_jshint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p jshint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p jshint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

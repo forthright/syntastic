@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_ruby_vile_rubycritic_checker')
 
     function! SyntaxCheckers_ruby_vile_rubycritic_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p rubycritic -f syntastic -n -d' })
+                    \ 'args': 'analyze -p rubycritic -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 
@@ -63,7 +63,7 @@ if !exists('g:loaded_syntastic_ruby_vile_rubocop_checker')
 
     function! SyntaxCheckers_ruby_vile_rubocop_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p rubocop -f syntastic -n -d' })
+                    \ 'args': 'analyze -p rubocop -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 
@@ -96,7 +96,7 @@ if !exists('g:loaded_syntastic_ruby_vile_rails_best_practices_checker')
 
     function! SyntaxCheckers_ruby_vile_rails_best_practices_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p rails-best-practices -f syntastic -n -d' })
+                    \ 'args': 'analyze -p rails-best-practices -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_haskell_vile_hlint_checker')
 
     function! SyntaxCheckers_haskell_vile_hlint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p hlint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p hlint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

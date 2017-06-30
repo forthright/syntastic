@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_slim_vile_slim_lint_checker')
 
     function! SyntaxCheckers_slim_vile_slim_lint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p slim-lint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p slim-lint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 
@@ -63,7 +63,7 @@ if !exists('g:loaded_syntastic_slim_vile_rails_best_practices_checker')
 
     function! SyntaxCheckers_slim_vile_rails_best_practices_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p rails-best-practices -f syntastic -n -d' })
+                    \ 'args': 'analyze -p rails-best-practices -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 

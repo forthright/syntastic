@@ -30,7 +30,7 @@ if !exists('g:loaded_syntastic_sass_vile_sass_lint_checker')
 
     function! SyntaxCheckers_sass_vile_sass_lint_GetLocList() dict
         let makeprg = self.makeprgBuild({
-                    \ 'args': 'punish -p sass-lint -f syntastic -n -d' })
+                    \ 'args': 'analyze -p sass-lint -f syntastic -n -d' })
 
         let errorformat = '%f:%l:%c: %t: %m'
 
